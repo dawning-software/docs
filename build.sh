@@ -3,18 +3,6 @@ git clone https://github.com/dawnlarsson/dawning-kit 2>/dev/null || true
 
 . dawning-kit/doc.sh
 
-folders=("dawning")
-
-map_all() {
-        local input_folder="$1"
-
-        for file in "$input_folder"/*.md; do
-                if [ -f "$file" ]; then
-                        echo
-                fi
-        done
-}
-
 doc_folder() {
         local input_folder="$1"
         local output_folder="${2:-dist}"
@@ -25,6 +13,9 @@ doc_folder() {
                 if [ -f "$file" ]; then
                         local filename=$(basename "$file" .md)
                         cp template.html "$output_folder/$filename.html"
+
+                        local side=$(doc side.md)
+                        template_replace "<meta template_side>" "$output_folder/$filename.html" "$side"
 
                         local content=$(doc "$file")
                         template_replace "<meta template_body>" "$output_folder/$filename.html" "$content"
@@ -39,15 +30,9 @@ build() {
 
         less_css "style/*.css" dist/style.css
 
-        cp template.html dist/index.html
-
-        index=$(doc ../README.md)
-        template_replace "<meta template_body>" dist/index.html "$index"
-
-        local side=$(doc side.md)
-        template_replace "<meta template_side>" dist/index.html "$side"
-
         doc_folder "dawning" "dist/dawning"
+
+        cp dist/dawning/index.html dist/index.html
 }
 
 build
