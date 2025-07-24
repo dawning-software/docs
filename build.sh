@@ -1,5 +1,5 @@
 #!/bin/sh
-git clone https://github.com/dawnlarsson/dawning-kit
+git clone https://github.com/dawnlarsson/dawning-kit 2>/dev/null || true
 
 . dawning-kit/doc.sh
 

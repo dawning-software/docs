@@ -1,5 +1,6 @@
 {
         "editor.tabSize": 8,
-        "livePreview.serverRoot": ".docs/dist",
-        "liveServer.settings.root": ".docs/dist",
+        "livePreview.serverRoot": "dist/",
+        "liveServer.settings.root": "dist/",
+        "liveServer.settings.port": 5501,
 }
