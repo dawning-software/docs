@@ -86,7 +86,7 @@ nav {
 
 aside {
         max-width: 280px;
-        width: 100%;
+        min-width: 280px;
         padding-left: 2px;
         font-size: 16px;
         display: flex;
@@ -228,12 +228,13 @@ aside li:active,
         font-size: 32px;
         color: var(--90);
         background: var(--10);
-        padding: 8px;
+        padding: 16px;
         padding-left: 22px;
         width: 64px;
         user-select: none;
         border-radius: 0 99px 99px 0;
         transition: 0.05s ease;
+        line-height: 1.0;
 }
 
 [menu]:hover {

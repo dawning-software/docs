@@ -18,6 +18,30 @@ article>ul {
         margin: 0;
 }
 
+article p {
+        margin-bottom: 16px;
+}
+
+article>section p {
+        margin: 0;
+}
+
+article section {
+        line-height: 1.4;
+        margin-bottom: 48px;
+}
+
+tag {
+        display: inline-block;
+        font-size: 14px;
+        color: var(--90);
+        background-color: var(--10);
+        padding: 5px 10px;
+        border-radius: 99px;
+        margin: 8px 0;
+        margin-right: 8px;
+}
+
 article h1,
 article h2,
 article h3,
@@ -25,7 +49,6 @@ article h4,
 article h5,
 article h6 {
         margin: 0;
-        line-height: 1.5;
         font-weight: 900;
 }
 
