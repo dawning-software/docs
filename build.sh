@@ -3,7 +3,7 @@ git clone https://github.com/dawnlarsson/dawning-kit 2>/dev/null || true
 
 . dawning-kit/doc.sh
 
-folders="dawning;"
+folders="docs/dawning;docs/kit;docs/c standard;docs/eos"
 side=""
 
 # Function to sanitize names for URLs (replace spaces with dashes)
