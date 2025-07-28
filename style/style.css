@@ -42,6 +42,7 @@
 
 [center] {
         justify-content: center;
+        place-items: center;
 }
 
 ::selection {
@@ -65,18 +66,21 @@
 }
 
 main,
-nav {
+nav,
+footer {
         padding: 0 max(24px, calc((100vw - 1200px) / 2));
 }
 
 main {
         margin: 0;
         width: 100%;
+        min-height: calc(100vh - 82px * 2);
         display: flex;
         flex-direction: row;
         gap: 48px;
 }
 
+footer,
 nav {
         display: flex;
         justify-content: space-between;
@@ -91,15 +95,16 @@ aside {
         font-size: 16px;
         display: flex;
         flex-direction: column;
-        gap: 8px;
 }
 
 aside p {
         padding-top: 16px;
         margin: 0px;
+        margin-bottom: 8px;
         color: #fff;
         font-size: 14px;
         letter-spacing: 1px;
+        text-transform: capitalize;
 }
 
 aside ul {
@@ -112,7 +117,7 @@ aside ul {
         list-style: none;
 }
 
-aside li {
+[qx] {
         display: flex;
         align-items: center;
         padding: 6px 14px;
@@ -122,16 +127,17 @@ aside li {
         border-radius: 999px;
         transform: translateX(-10px);
         margin-right: 4px;
+        text-transform: capitalize;
 }
 
-aside li::before {
+[qx]::before {
         opacity: 50%;
         margin-right: 12px;
         content: url(/doc.svg);
         height: 18px;
 }
 
-aside li:hover {
+[qx]:hover {
         filter: brightness(1.2);
         color: var(--10);
         cursor: pointer;
@@ -213,7 +219,7 @@ article::before {
 }
 
 
-aside li:active,
+[qx]:active,
 [presy]:active {
         filter: brightness(1.55);
         box-shadow: 0 0 0 5px var(--90);
@@ -223,14 +229,13 @@ aside li:active,
         position: fixed;
         z-index: 4000;
         left: 0;
-        bottom: 32px;
+        bottom: 48px;
         cursor: pointer;
         font-size: 32px;
         color: var(--90);
         background: var(--10);
         padding: 16px;
         padding-left: 22px;
-        width: 64px;
         user-select: none;
         border-radius: 0 99px 99px 0;
         transition: 0.05s ease;
@@ -260,7 +265,7 @@ aside li:active,
 
 nav,
 aside p,
-aside li,
+[qx],
 [noselect] {
         -webkit-touch-callout: none;
         -webkit-user-select: none;
